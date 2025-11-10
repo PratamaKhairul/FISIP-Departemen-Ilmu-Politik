@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ilmu Politik — FISIP UI | Modern Minimal</title>
+  <meta name="description" content="Situs profil Program Studi Ilmu Politik, Fakultas Ilmu Sosial dan Ilmu Politik, Universitas Indonesia. Modern, minimalis, responsif." />
+  <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* soft mint */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      --gap:18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#081120 0%, #071826 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:36px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .wrap{width:100%;max-width:var(--maxw)}
+
+    /* NAV */
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7ec8ff);display:grid;place-items:center;font-weight:700;color:#041018}
+    .brand h1{font-size:18px;margin:0}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+    .cta{background:var(--accent);color:#041018;padding:10px 14px;border-radius:10px;font-weight:700}
+
+    /* mobile */
+    .hamburger{display:none;background:transparent;border:1px solid var(--glass);padding:8px;border-radius:10px}
+
+    /* HERO */
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:1fr 360px;gap:var(--gap);align-items:center;margin-bottom:20px}
+    .hero h2{margin:0 0 8px 0;font-size:24px}
+    .hero p{margin:0;color:var(--muted)}
+    .stats{display:flex;gap:12px;margin-top:14px}
+    .stat{background:var(--card);padding:12px;border-radius:12px;min-width:90px;text-align:center}
+    .stat strong{display:block;font-size:18px}
+
+    /* CONTENT GRID */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    h3{margin:0 0 12px 0}
+
+    /* program list */
+    .programs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .prog{padding:12px;border-radius:10px;background:var(--glass);display:flex;flex-direction:column;gap:6px}
+    .prog small{color:var(--muted)}
+
+    /* faculty list */
+    .faculty{display:flex;flex-direction:column;gap:10px}
+    .teacher{display:flex;gap:12px;align-items:center}
+    .avatar{width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#112233,#183044);display:grid;place-items:center;font-weight:700}
+
+    /* research & news */
+    .news-item{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;flex-direction:column;gap:6px}
+    .muted{color:var(--muted)}
+
+    /* search */
+    .search{display:flex;gap:10px}
+    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid transparent;background:rgba(0,0,0,0.2);color:inherit}
+    .search button{padding:10px 12px;border-radius:10px;border:0;background:var(--card);color:var(--muted)}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero,.grid{grid-template-columns:1fr}
+      nav{display:none}
+      .hamburger{display:block}
+    }
+
+    /* small utilities */
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:13px}
+
+    /* subtle focus */
+    a:focus,input:focus,button:focus{outline:2px solid rgba(110,231,183,0.12);outline-offset:3px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo">IP</div>
+        <div>
+          <h1>Ilmu Politik</h1>
+          <p>FISIP — Universitas Indonesia</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <a href="#about">Tentang</a>
+        <a href="#programs">Program</a>
+        <a href="#faculty">Dosen</a>
+        <a href="#research">Riset</a>
+        <a class="cta" href="#contact">Hubungi</a>
+      </nav>
+
+      <button class="hamburger" id="btnMenu" aria-expanded="false" aria-label="Buka menu">☰</button>
+    </header>
+
+    <section class="hero card">
+      <div>
+        <h2>Ilmu Politik — FISIP UI</h2>
+        <p>Mempelajari sistem politik, kebijakan publik, aktor-aktor politik, dan teori politik. Program yang melahirkan pemimpin, peneliti, dan analis kebijakan publik.</p>
+
+        <div class="stats" aria-hidden="false">
+          <div class="stat">
+            <strong>35+</strong>
+            <small class="muted">Penelitian Aktif</small>
+          </div>
+          <div class="stat">
+            <strong>1200+</strong>
+            <small class="muted">Alumni</small>
+          </div>
+          <div class="stat">
+            <strong>40</strong>
+            <small class="muted">Dosen & Staf</small>
+          </div>
+        </div>
+
+        <div style="margin-top:18px" class="chips">
+          <span class="chip">Teori Politik</span>
+          <span class="chip">Kebijakan Publik</span>
+          <span class="chip">Politik Perbandingan</span>
+          <span class="chip">Metode Penelitian</span>
+        </div>
+      </div>
+
+      <aside style="text-align:center">
+        <div style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)">
+          <h3 style="margin-bottom:6px">Daftar Singkat</h3>
+          <p class="muted" style="margin-top:0;margin-bottom:12px">Kurikulum inti, kegiatan, dan kesempatan riset</p>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:stretch">
+            <a class="cta" href="#programs" style="text-decoration:none;text-align:center">Lihat Program</a>
+            <a href="#research" style="text-decoration:none;color:var(--muted);text-align:center;padding:10px;border-radius:10px;background:var(--card);">Riset & Publikasi</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="grid">
+      <main>
+        <section id="about" class="card" aria-labelledby="aboutTitle">
+          <h3 id="aboutTitle">Tentang Program Studi</h3>
+          <p class="muted">Program Studi Ilmu Politik di FISIP UI membekali mahasiswa dengan pengetahuan mendasar mengenai teori politik, sistem pemerintahan, kebijakan publik, dan metode penelitian sosial. Lulusan siap bekerja di pemerintahan, lembaga riset, LSM, media, maupun sektor privat.</p>
+
+          <div style="margin-top:14px" class="card">
+            <h4 style="margin:0 0 8px 0">Visi & Misi</h4>
+            <ul class="muted">
+              <li>Menjadi pusat unggulan penelitian dan pengajaran ilmu politik di Indonesia.</li>
+              <li>Menghasilkan lulusan yang kritis, etis, dan berdaya saing global.</li>
+              <li>Mendorong kajian kebijakan berbasis bukti untuk perbaikan publik.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="programs" class="card" style="margin-top:18px" aria-labelledby="progTitle">
+          <h3 id="progTitle">Program & Kurikulum</h3>
+          <p class="muted">Program sarjana (S1) dengan konsentrasi pilihan dan program pascasarjana untuk riset terapan.</p>
+
+          <div style="margin:12px 0" class="search">
+            <input id="searchInput" placeholder="Cari mata kuliah atau kata kunci (contoh: kebijakan)" aria-label="Cari program" />
+            <button id="searchBtn">Cari</button>
+          </div>
+
+          <div id="programList" class="programs" role="list">
+            <!-- JS will populate -->
+          </div>
+        </section>
+
+        <section id="research" class="card" style="margin-top:18px" aria-labelledby="resTitle">
+          <h3 id="resTitle">Riset & Publikasi</h3>
+          <p class="muted">Contoh topik penelitian yang sedang berjalan di program studi:</p>
+          <div style="display:grid;gap:10px;margin-top:10px">
+            <div class="news-item">
+              <strong>Analisis Efektivitas Kebijakan Desentralisasi</strong>
+              <span class="muted">Tim Riset Kebijakan Publik — 2025</span>
+              <p class="muted" style="margin:6px 0 0 0">Kajian empiris terhadap dampak desentralisasi fiskal terhadap kualitas layanan publik di kabupaten-kabupaten terpilih.</p>
+            </div>
+            <div class="news-item">
+              <strong>Media Sosial dan Polarisasi Politik</strong>
+              <span class="muted">Laboratorium Politik Digital — 2024</span>
+              <p class="muted" style="margin:6px 0 0 0">Studi kuantitatif tentang mekanisme pembentukan opini menggunakan data big social media.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faculty" class="card" style="margin-top:18px" aria-labelledby="facTitle">
+          <h3 id="facTitle">Dosen & Staf Inti</h3>
+          <p class="muted">Tim pengajar terdiri dari akademisi, analis kebijakan, dan praktisi.</p>
+          <div class="faculty" id="facultyList">
+            <!-- JS populate -->
+          </div>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Berita Singkat</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <div class="news-item">
+              <strong>Seminar Kebijakan Publik: Tantangan 2026</strong>
+              <span class="muted">12 Nov 2025 — Auditorium FISIP UI</span>
+            </div>
+            <div class="news-item">
+              <strong>Call for Papers — Jurnal Politik Kontemporer</strong>
+              <span class="muted">Batas: 30 Nov 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Kontak & Akses</h3>
+          <p class="muted">Alamat: Kampus UI Depok — Fakultas Ilmu Sosial dan Ilmu Politik</p>
+          <p class="muted">Email: ilmupolitik@fisip.ui.ac.id</p>
+          <a class="cta" id="contact" href="#contactForm" style="display:inline-block;margin-top:8px;text-decoration:none">Hubungi Kami</a>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick Links</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a href="#programs" style="color:var(--muted);text-decoration:none">Kurikulum</a>
+            <a href="#research" style="color:var(--muted);text-decoration:none">Publikasi</a>
+            <a href="#facTitle" style="color:var(--muted);text-decoration:none">Staf</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" id="contactForm" style="margin-top:18px">
+      <h3>Hubungi Program Studi</h3>
+      <p class="muted">Isi form untuk pertanyaan akademik atau kolaborasi riset.</p>
+      <form id="formContact" style="display:flex;flex-direction:column;gap:10px;margin-top:12px;max-width:720px">
+        <input name="name" placeholder="Nama lengkap" required />
+        <input name="email" placeholder="Email" type="email" required />
+        <input name="subject" placeholder="Subjek" />
+        <textarea name="message" rows="5" placeholder="Pesan" required style="padding:10px;border-radius:10px;background:rgba(0,0,0,0.2);border:0;color:inherit"></textarea>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button type="submit" class="cta">Kirim Pesan</button>
+          <div class="muted" id="formStatus" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      © "Ilmu Politik" — FISIP UI · Desain modern minimal • Dibuat untuk presentasi & prototipe
+    </footer>
+  </div>
+
+  <script>
+    // Data sederhana — ganti dengan data nyata jika tersedia
+    const programs = [
+      {title: 'S1 Ilmu Politik - Kurikulum Inti', desc: 'Teori politik, metode penelitian, administrasi publik.'},
+      {title: 'S1 Ilmu Politik - Konsentrasi Kebijakan Publik', desc: 'Analisis kebijakan, evaluasi program, ekonomi publik.'},
+      {title: 'S1 Ilmu Politik - Politik Perbandingan', desc: 'Studi sistem politik, komparatif negara.'},
+      {title: 'Magister Ilmu Politik (MIA)', desc: 'Riset lanjutan, tesis, kolaborasi internasional.'},
+      {title: 'Program Doktor Terapan', desc: 'Fokus pada penelitian kebijakan terapan.'},
+      {title: 'Short Course: Analisis Data Politik', desc: 'Pelatihan statistik & R untuk politolog.'}
+    ];
+
+    const faculty = [
+      {name:'Dr. R. Adi Putra', title:'Profesor - Teori Politik', bio:'Spesialis teori politik dan demokrasi.'},
+      {name:'Dra. Siti Marlina', title:'Dosen - Kebijakan Publik', bio:'Fokus pada kebijakan kesehatan dan pendidikan.'},
+      {name:'Dr. Hendri Wicaksono', title:'Dosen - Politik Perbandingan', bio:'Peneliti tentang sistem pemerintahan Asia Tenggara.'}
+    ];
+
+    // render program list
+    function renderPrograms(list){
+      const wrap = document.getElementById('programList');
+      wrap.innerHTML = '';
+      list.forEach(p=>{
+        const el = document.createElement('div');
+        el.className='prog';
+        el.setAttribute('role','listitem');
+        el.innerHTML = `<strong>${p.title}</strong><small class='muted'>${p.desc}</small>`;
+        wrap.appendChild(el);
+      })
+    }
+
+    // render faculty
+    function renderFaculty(list){
+      const wrap = document.getElementById('facultyList');
+      wrap.innerHTML = '';
+      list.forEach((f,i)=>{
+        const el = document.createElement('div');
+        el.className='teacher';
+        el.innerHTML = `<div class='avatar'>${f.name.split(' ').map(n=>n[0]).slice(0,2).join('')}</div><div><strong>${f.name}</strong><div class='muted'>${f.title}</div><div class='muted' style='font-size:13px;margin-top:6px'>${f.bio}</div></div>`;
+        wrap.appendChild(el);
+      })
+    }
+
+    // initial render
+    renderPrograms(programs);
+    renderFaculty(faculty);
+
+    // search filter
+    document.getElementById('searchBtn').addEventListener('click', ()=>{
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const filtered = programs.filter(p=> (p.title + ' ' + p.desc).toLowerCase().includes(q));
+      renderPrograms(filtered.length?filtered:[{title:'Tidak ditemukan', desc:'Coba kata kunci lain'}]);
+    });
+
+    document.getElementById('searchInput').addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ document.getElementById('searchBtn').click(); }});
+
+    // simple menu toggle for mobile
+    const btnMenu = document.getElementById('btnMenu');
+    btnMenu.addEventListener('click', ()=>{
+      const nav = document.querySelector('nav');
+      const open = nav.style.display !== 'flex';
+      nav.style.display = open ? 'flex' : 'none';
+      btnMenu.setAttribute('aria-expanded', open);
+    });
+
+    // contact form (fake submit for prototype)
+    document.getElementById('formContact').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.textContent = 'Mengirim...';
+      // simulate send
+      setTimeout(()=>{
+        status.textContent = 'Terkirim — terima kasih! Kami akan menanggapi via email.';
+        document.getElementById('formContact').reset();
+      },700);
+    });
+
+    // accessibility: reduce motion if user prefers
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
+</body>
+</html>
