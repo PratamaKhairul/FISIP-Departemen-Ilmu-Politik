@@ -1,1 +1,0 @@
-# FISIP-Departemen-Ilmu-Politik
